@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheLastDance - Natal2023</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+      .img-container {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: auto; /* 30% of the width of the container */
+  height: auto; /* Resize the image to fit the height of the container */
+  margin: 0; /* Remove margins around the image */
+  padding: 0; /* Remove padding around the image */
+  background-color: #fff; /* Set a background color for the container */
+  border: 1px solid #ccc; /* Add a border around the image */
+  border-radius: 5px; /* Round the corners of the container */
+  overflow: hidden; /* Hide the overflow of the image */
+}
+    </style>
+</head>
+<body>
+  <div class="container col-xxl-8 px-4 pt-5 mb-4">
+    <div class="bg-light row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-8 fw-bold lh-1 text-body-emphasis">A última dança</h1>
+            <p class="lead">Encontra cinco palavras escondidas na imagem.</p>
+            <p class="lead">Exemplo resposta:<br> rita</p>
+            <p class="lead">Dica:<br>letra incial da palavra rita é: r</p>
+
+            <!-- Caixas de texto -->
+            <div class="col-lg-4 mb-4">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-1 mb-1">
+                    <input type="text" id="respostaUsuario1" name="respostaUsuario1" placeholder="letra incial: u">  
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-1 mb-1">
+                    <input type="text" id="respostaUsuario2" name="respostaUsuario2" placeholder="letra incial: s">  
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-1 mb-1">
+                    <input type="text" id="respostaUsuario3" name="respostaUsuario3" placeholder="letra incial: j">  
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-1 mb-1">
+                    <input type="text" id="respostaUsuario4" name="respostaUsuario4" placeholder="letra incial: v">
+                </div>  
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-1">
+                    <input type="text" id="respostaUsuario5" name="respostaUsuario5" placeholder="letra incial: m">    
+                </div>
+                <button onclick="validarResposta()" type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Validar Resposta</button>
+            </div>
+        </div>
+        <div class="img-container">
+          <img class="rounded-lg-3 img-fluid" src="./images/puzzle.jpg" alt="400">
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+  function validarResposta() {
+      // Obtém o valor inserido pelo usuário
+      var respostaInserida1 = document.getElementById('respostaUsuario1').value;
+      var respostaInserida2 = document.getElementById('respostaUsuario2').value;
+      var respostaInserida3 = document.getElementById('respostaUsuario3').value;
+      var respostaInserida4 = document.getElementById('respostaUsuario4').value;
+      var respostaInserida5 = document.getElementById('respostaUsuario5').value;
+
+
+      // Condição de validação
+      var respostaCorreta1 = "uma";
+      var respostaCorreta2 = "semana";
+      var respostaCorreta3 = "janeiro";
+      var respostaCorreta4 = "viagem";
+      var respostaCorreta5 = "malta";
+      // Verifica se a resposta está correta
+      if ((respostaInserida1 === respostaCorreta1) && (respostaInserida2 === respostaCorreta2) && (respostaInserida3 === respostaCorreta3) && (respostaInserida4 === respostaCorreta4)&& (respostaInserida5 === respostaCorreta5)) {
+        alert('Resposta certa! Obrigado por não desistires:) O teu presente é....');
+        window.location.href = 'presente.html';
+      } else {
+        alert('Resposta errada Ana Rita, tu és capaz de mais. Tenta novamente.');
+      }
+    }
+</script>
+</html>
